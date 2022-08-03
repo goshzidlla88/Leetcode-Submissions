@@ -1,6 +1,6 @@
-Python:
+Python: (Using dictionary method)
 
-		hashmap ={}
+	hashmap ={}
         for i in range(len(s)):
             if s[i] in hashmap:
                 if hashmap[s[i]] != t[i]:
@@ -13,7 +13,10 @@ Python:
                 else:
                     hashmap[s[i]] = t[i]
         return True
-Java:
+	
+	
+	
+Java: (Using HashMap method)
 
 public boolean isIsomorphic(String s, String t) {
         HashMap<Character,Character > dummy = new HashMap<Character, Character>();
@@ -34,7 +37,11 @@ public boolean isIsomorphic(String s, String t) {
         }
         return true;
     }
-C++:
+    
+    
+    
+    
+C++: (Using unordered_map method)
 
 bool isIsomorphic(string s, string t) {
         unordered_map<char, char> dummyX;
