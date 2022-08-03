@@ -1,0 +1,12 @@
+bool isSubsequence(string s, string t) {
+    int idx = 0;
+		for (int i = 0; i < s.length(); i++)
+		{
+			idx = t.find(s[i], idx);
+			if (-1 == idx) return false;
+            idx++;
+		}
+		return true;
+    }
+    
+Utilising the string member function of C++ find()
