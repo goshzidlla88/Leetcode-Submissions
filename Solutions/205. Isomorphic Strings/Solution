@@ -1,0 +1,60 @@
+Python:
+
+		hashmap ={}
+        for i in range(len(s)):
+            if s[i] in hashmap:
+                if hashmap[s[i]] != t[i]:
+                    return False
+                else:
+                    continue
+            else:
+                if t[i] in hashmap.values():
+                    return False;
+                else:
+                    hashmap[s[i]] = t[i]
+        return True
+Java:
+
+public boolean isIsomorphic(String s, String t) {
+        HashMap<Character,Character > dummy = new HashMap<Character, Character>();
+        for(int i=0; i<s.length(); i++)
+        {
+            char x = s.charAt(i);
+            char y = t.charAt(i);
+            if(dummy.containsKey(x))
+            {
+                if(dummy.get(x) != y) return false;
+                else continue;
+            }
+            else
+            {
+                if(dummy.containsValue(y)) return false;
+                else dummy.put(x,y);
+            }
+        }
+        return true;
+    }
+C++:
+
+bool isIsomorphic(string s, string t) {
+        unordered_map<char, char> dummyX;
+		unordered_map<char, char> dummyY;
+		for (int i = 0; i < s.length(); i++)
+		{
+			if(dummyX.find(s[i]) != dummyX.end())
+			{
+				if (dummyX[s[i]] != t[i]) return false;
+				else continue;
+			}
+			else if(dummyY.find(t[i]) != dummyY.end())
+			{
+				return false;
+			}
+			else
+			{
+				dummyX.insert(make_pair(s[i], t[i]));
+				dummyY.insert(make_pair(t[i], s[i]));
+			}
+		}
+        return true;
+    }
